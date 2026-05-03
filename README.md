@@ -128,13 +128,13 @@ eksctl create cluster \
 --node-type t3.medium \
 --nodes 2
 ```
-![](./images/Step-3-1.png)
+![](./images/output1.png)
 
 __Verify:__
 ```
 kubectl get nodes
 ```
-![](./images/Step-3-2.png)
+![](./images/output2.png)
 
 ### Step 4: Create Blue Deployment
 
@@ -262,14 +262,14 @@ kubectl apply -f service.yaml
 ```
 kubectl get all
 ```
-![](./images/Step-8.png)
+![](./images/output3.png)
 
 
 ### Step 9: Access Application
 ```
 kubectl get svc myapp-service
 ```
-![](./images/Step-9.png)
+![](./images/output4.png)
 
 Open in browser:
 ```
@@ -291,15 +291,15 @@ Increase Canary to 50%
 kubectl scale deployment green-canary --replicas=3
 kubectl scale deployment blue-app --replicas=3
 ```
-r![](./images/Step-10.png)
+![](./images/output5.png)
 Full Promotion
 ```
 kubectl scale deployment green-canary --replicas=6
 kubectl scale deployment blue-app --replicas=0
 ```
 
-![](./images/Green.png)
-![](./images/Blue.png)
+![](./images/output7.png)
+![](./images/output8.png)
 
 ### Step 11: Rollback (Zero Downtime)
 ```
