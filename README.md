@@ -315,18 +315,15 @@ eksctl delete cluster --name blue-green-cluster --region ap-south-1
 
 This project reflects common practices used in **modern DevOps and cloud-native environments**, including:
 
-- Safe production deployments  
-- Incremental feature releases  
-- Cloud-native application management  
-- Kubernetes traffic control  
-
+-Zero downtime deployment
+-Safe release strategy
+-Kubernetes traffic control
+-Production-ready architecture
 Such deployment strategies are widely used by companies to **reduce deployment risk and improve application reliability**.
 
 
 ## 📌 Conclusion
 
-This project demonstrates how **Blue-Green and Canary deployment strategies** can be implemented using **Kubernetes on AWS EKS**.
+This project demonstrates how Blue-Green and Canary deployments can be implemented using Kubernetes on AWS EKS.
 
-By combining container orchestration with controlled traffic distribution, teams can release new application versions **safely, efficiently, and with zero downtime**.
-
-This makes the project a strong **DevOps portfolio and interview-ready implementation**.
+It is a real-world DevOps project showcasing safe deployment strategies and cloud-native practices.
