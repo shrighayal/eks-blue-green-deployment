@@ -22,18 +22,18 @@ By running **multiple versions simultaneously**, traffic can be gradually shifte
 
 ## 🏗 Deployment Strategy
 
-### 🔵 Blue Deployment (Stable Version)
-The **Blue environment** represents the current stable version of the application that is actively serving users.
+### 🔵 Blue Deployment (Stable)
+Current stable version serving users.
 
-### 🟢 Green Deployment (New Version)
-The **Green environment** represents the new application version that is gradually introduced.
+### 🟢 Green Deployment (New)
+New version introduced gradually.
 
 ### 🐤 Canary Release
-In the **Canary deployment strategy**, only a small portion of traffic is directed to the new version initially.  
-If the new version performs well, traffic is slowly increased until it fully replaces the old version.
+Small portion of traffic goes to new version → then increased gradually.
 
-Traffic distribution in this project is controlled by **changing the number of running pods**.
+Traffic control is done using **pod scaling**.
 
+---
 
 ## 🏛 Architecture Overview
 
@@ -78,7 +78,7 @@ eks-blue-green-canary/
 ```
 
 
-### Step 1: Launch Ubuntu EC2 (Jump Server)
+### Step 1: Launch Ubuntu EC2 
 
 1. Launch **Ubuntu Server 22.04 LTS**
 2. Instance type: `t3.medium`
@@ -136,7 +136,7 @@ kubectl get nodes
 ```
 ![](./images/Step-3-2.png)
 
-### Step 4: Create Blue Deployment (Stable Version)
+### Step 4: Create Blue Deployment
 
 ```vim blue-deployment.yaml```
 ```
@@ -169,7 +169,7 @@ spec:
         configMap:
           name: blue-html
 ```
-### Step 5: Create Green Canary Deployment (New Version)
+### Step 5: Create Green Canary Deployment
 
 ```vim green-canary.yaml```
 ```
